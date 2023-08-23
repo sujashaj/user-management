@@ -18,7 +18,11 @@ class UserManager:
                 session.close()
                 return "Username or email is already taken.Please choose different credentials"
 
-          
+            user = User(username, email, password)
+            session.add(user)
+            session.commit()
+            session.close()
+            return "Registration successful!"
 
 
 
