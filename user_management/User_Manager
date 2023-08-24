@@ -24,6 +24,20 @@ class UserManager:
             session.close()
             return "Registration successful!"
 
+    def login(self, username, password):
+            session = self.Session()
+            user = session.query(User).filter(User.username == username).first()
+            if user is not None:
+                if user.verify_password(password):
+                    if user.is_verified:
+                         session.close()
+                         return "Login successful!"
+
+
+
+
+
+
 
 
 
