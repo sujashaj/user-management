@@ -32,6 +32,14 @@ class UserManager:
                     if user.is_verified:
                          session.close()
                          return "Login successful!"
+                    else:
+                        session.close()
+                        return "Account not verified. Please check your email for verification instructions."
+                else:
+                    session.close()
+                    return "Incorrect password"
+            
+
 
 
 
