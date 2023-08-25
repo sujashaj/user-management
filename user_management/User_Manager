@@ -38,7 +38,8 @@ class UserManager:
                 else:
                     session.close()
                     return "Incorrect password"
-            
+            session.close()
+            return "User not found."
 
 
 
