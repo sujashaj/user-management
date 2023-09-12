@@ -1,7 +1,7 @@
 from mailjet_rest import Client
 import os
 
-API_KEY = os.environ['MJ_APIKEY_PUBLIC']
+API_KEY = os.environ['API_KEY']
 API_SECRET = os.environ['API_SECRET']
 SENDER_EMAIL = os.environ['SENDER_EMAIL']
 SENDER_NAME = os.environ['SENDER_NAME']
@@ -9,9 +9,8 @@ SENDER_NAME = os.environ['SENDER_NAME']
 
 
 class MailJetClient:
-
-    def __init(self):
-        self.mailjet = Client(auth=(API_KEY, API_SECRET), version='v.31')
+    def __init__(self):
+        self.mailjet = Client(auth=(API_KEY, API_SECRET), version='v3.1')
 
 
     def send_email(self, receiver_email, receiver_name):
