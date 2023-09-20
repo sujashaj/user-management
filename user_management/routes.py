@@ -1,9 +1,14 @@
-from flask import Flask
-from routes.routes import bp as routes_bp  # Import the Blueprint
-
-app = Flask(__name__)
-app.register_blueprint(routes_bp)  # Register the Blueprint
+from flask import Blueprint
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+bp = Blueprint("routes", __name__)
+
+@bp.route("/")
+def home():
+    return "Welcome to Flask App!"
+
+
+
+@bp.route("/about")
+def about()
+     return "This is the about page."
