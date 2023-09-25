@@ -13,7 +13,7 @@ class MailJetClient:
         self.mailjet = Client(auth=(API_KEY, API_SECRET), version='v3.1')
 
 
-    def send_email(self, receiver_email, receiver_name):
+    def send_email(self, receiver_email, receiver_name, verification_link):
         data = {
             'Messages': [
                 {
@@ -29,7 +29,8 @@ class MailJetClient:
                     ],
                     "Subject": "Please verify your email address!",
                     "TextPart": "Greetings from user management application!",
-                    "HTMLPart": "May the delivery force be with you!"
+                    "HTMLPart": f"May the delivery force be with you! Please click on this url to verify"
+                                "your email address: {}."format(verification_link)
                 }
             ]
         }
