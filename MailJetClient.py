@@ -30,7 +30,7 @@ class MailJetClient:
                     "Subject": "Please verify your email address!",
                     "TextPart": "Greetings from user management application!",
                     "HTMLPart": f"May the delivery force be with you! Please click on this url to verify"
-                                "your email address: {}."format(verification_link)
+                                "your email address: {}".format(verification_link)
                 }
             ]
         }
