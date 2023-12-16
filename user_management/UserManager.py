@@ -2,6 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from user_management.User import Base, User
+from MailJetClient import MailJetClient
 
 
 class UserManager:
@@ -9,6 +10,7 @@ class UserManager:
             self.engine = create_engine(f'sqlite:///{db_file}')
             Base.metadata.create_all(self.engine)
             self.Session = sessionmaker(bind = self.engine)
+            self.mailjet_client = MailJetClient()
             self.token_manager = token_manager
 
     def register_user(self, username, email, password):

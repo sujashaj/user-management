@@ -8,9 +8,8 @@ DB_FILE = "user_database.db"
 APP_SECRET_KEY = os.environ['APP_SECRET_KEY']
 
 
-
 class Routes:
-    def __init(self):
+    def __init__(self):
         self.bp = Blueprint("routes", __name__)
         self.register_routes()
         self.token_manager = TokenManager(APP_SECRET_KEY)
@@ -47,8 +46,6 @@ class Routes:
             return jsonify({'message': 'Account verified succesfully.'}), 200
         else:
             return jsonify({'message': 'Invalid token or user not found.'}), 400
-
-
 
     def register_routes(self):
         self.bp.add_url_rule("/", "home", self.home)
