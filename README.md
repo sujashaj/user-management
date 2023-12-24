@@ -76,7 +76,21 @@
     - **User Login**: Manages GET requests to "/login" for user authentication with username and password as query parameters.
     - **Email Verification**: Deals with GET requests to "/verify_email" carrying a verification token as a query parameter, ensuring secure email verification for users.
 
+## Running application
 
+1. Set up environment variables - API key and secret for mailjet server, sender email and name for email verification, app secret key to generate and verify JWT token 
+```
+export API_KEY=<API_KEY>
+export API_SECRET=<API_SECRET>
+export SENDER_EMAIL=<SENDER_EMAIL>
+export SENDER_NAME=<SENDER_NAME>
+export APP_SECRET_KEY=<APP_SECRET_KEY>
+```
+
+2. Start flask server
+```
+python3 app.py
+```
 
 
 

@@ -6,7 +6,7 @@ from MailJetClient import MailJetClient
 
 
 class UserManager:
-    def __init__(self, db_file, token_manager):
+    def __init__(self, db_file: str, token_manager):
             self.engine = create_engine(f'sqlite:///{db_file}')
             Base.metadata.create_all(self.engine)
             self.Session = sessionmaker(bind = self.engine)

@@ -1,6 +1,7 @@
 import jwt
 from datetime import datetime, timedelta
 
+
 class TokenManager:
     def __init__(self, secret_key):
         self.secret_key = secret_key
